@@ -1,0 +1,231 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Style.css">
+    <script src="./Main.js"></script>
+  </head>
+  <body onload="loadJsonData()">
+      
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <h1 style="text-align:center; color: blue;">Great Expectation Table</h1>
+    <br>
+    <br>
+    
+
+
+
+
+
+
+  
+    <div class="row text-center">
+      <h2 class="col-md-5" style="text-align: center;">Columns</h2>
+      <h2 class="col-md-6" style="text-align: center;">Great Expectation Values</h2>
+      <h2 class="col-md-6">Common Expectation values:</h2>
+    </div>
+  
+    <div class="row" style="margin-left: 40px;">
+  
+      <div class="col-md-5" id="firstCol" style="border:solid; width: 2px; height:300px;width:1800px;overflow:auto;" >
+      </div>
+      <div class="col-md-6" id="secondCol" style="border:solid;height:300px;width:1800px;overflow:auto;">
+  
+      </div>
+  
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-5">
+  
+      </div>
+      <div class="col-md-6">
+  
+      </div>
+      <div class="col-md-1">
+  
+      </div>
+    </div>
+    <div class="row" id="user_show">
+      <div class="col-md-12">
+  
+        <div class="container">
+          <table class="table table-bordered" style="margin:auto;">
+            <thead class="table-dark sticky-top">
+              <tr id="MainColumns">
+  
+              </tr>
+  
+              <tr id="SubColumns">
+  
+              </tr>
+            </thead>
+  
+            <tbody id="tbody">
+            </tbody>
+          </table>
+        </div>
+  
+  
+        <div class="col-md-12 d-flex mt-5 justify-content-center">
+          <button onclick="Next_Expectation();" style="background-color: rgb(76, 175, 80);
+          border: none;
+          color: white; width: 117px; padding: 6px;
+          ">NEXT</button>
+        </div>
+  
+  
+  
+  
+  </body>
+</html>
+ -->
+ <!doctype html>
+ <html lang="en">
+   <head>
+     <title>Title</title>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   </head>
+   <body onload="loadJsonData()" class="GExpectation" >
+       
+     <!-- Optional JavaScript -->
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="./Style.css">
+     <script src="./Main.js"></script>
+      <br>
+
+     <div>
+         <h1 style="text-align:center; color:white; background-color:black;  width: 40%;margin-left: 30%; border-radius: 5px;"> <b>Data Quality Checker UI</b></h1>
+     </div>
+     <br>
+     <br>
+     <div>
+      <div class="row" style="position: center;">
+        <div class="col-md-1">
+
+        </div>
+         <div class="col-md-5 clms text" id="columns" style="text-align: center; color:white;">
+             <h2 class="head">Column Names:</h2>
+         </div>
+         
+         <div class="col-md-5 uniq text" id="Unique Expectation Values:" style="text-align: center;">
+             <h2 class="head">
+                 CD Expectations:
+             </h2>
+         </div>
+         <!-- <div class="col-md-5 common" id="Non-Unique Great Expectations Values:">
+             <h2>
+                 Non-Unique Great Expectations Values:
+             </h2>
+         </div> -->
+ 
+     </div>
+
+     </div>
+     
+     <div class="col-md-12">
+         <div class="row">
+             <div class="col-md-1">
+
+             </div>
+             <div class="col-md-5 clms text" id="firstCol" style="border:solid;height: 300px;overflow: scroll;" >
+                 <!-- <h2 >
+                     Columns:
+                 </h2> -->
+ 
+             </div>
+             <div class="col-md-5 uniq text" id="secondCol" style="border:solid;height: 300px;overflow: scroll;">
+                 <!-- <h2>
+                     Great Expectation Values:
+                 </h2> -->
+ 
+             </div>
+             <!-- <div class="col-md-5 common" id="thirdcol" style="border:solid;height: 300px;overflow: scroll;">
+               
+             </div>  -->
+           </div>
+     </div>
+
+     <div class="common_exp">
+      <div class="row d-flex mt-5 justify-content-center">
+        <h2 class="head">CI Expectations:</h2>
+      </div>
+      <div class="col-md-12 d-flex mt-5 justify-content-center">
+        
+          <div class="col-md-6 common" id="thirdcol" style="border:solid;height: 300px;overflow: scroll; color: white;">
+          </div>
+      </div>
+     </div>
+     <br>
+
+     <div class="row" id="user_show">
+      
+
+      <div class="col-md-12">
+        <div class="container">
+        
+          <table class="table table-bordered">
+            <thead class="table-dark sticky-top">
+           
+              <tr id="MainColumns">
+  
+              </tr>
+  
+              <tr id="SubColumns">
+  
+              </tr>
+            </thead>
+  
+            <tbody id="tbody">
+            </tbody>
+          </table>
+        </div>
+
+
+
+     
+
+
+     <br>
+     <br>
+     
+     
+
+           <!-- Common Expectation Table view -->
+           <div class="row" id="user_show2">
+      
+
+            <div class="col-md-12">
+              <div class="container" id="CommonExpectation" >
+              
+              </div>
+     
+     
+           <div class="col-md-12 d-flex mt-5 justify-content-center">
+             <button onclick="Next_Expectation();" style="background-color: rgb(76, 175, 80);
+             border: none;
+             color: white; width: 117px; padding: 6px;
+             ">NEXT</button>
+           </div>
+           <br>
+ 
+ 
+ 
+ </body>
+ </html>

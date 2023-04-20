@@ -1,0 +1,89 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mailer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(45deg, orange, yellow);
+      }
+      
+      .container {
+        margin: 50px auto;
+        max-width: 500px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      h1 {
+        text-align: center;
+        margin-top: 0;
+      }
+      #success{
+        display: none;
+      }
+      
+      input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      .mail_crud,.alert {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        /* width: 100%; */
+      }
+      
+      .mail_crud:hover {
+        background-color: #45a049;
+      }
+    </style>
+    <link rel="stylesheet" href="./Style.css">
+    <script src="./Main.js"></script>
+  </head>
+  
+  <body>
+    <div class="container" style="background-color: black; color: white; width: 40%; margin-left: 360px;  border-radius: 6px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3); ">
+      <h1 class="text">Mailer</h1>
+      <div>
+        <label for="sender">Sender:</label>
+        <input type="text" id="sender" name="sender" placeholder="Enter sender's name...">
+        
+        <label for="receiver">Receiver:</label>
+        <input type="text" id="receiver" name="receiver" placeholder="Enter receiver's name...">
+        
+        <label for="receiver">Subject:</label>
+        <input type="text" id="Subject" name="Subject" placeholder="Enter Subject...">
+        <br>
+        <br>
+        <button type="submit" class=" row d-flex mt-5 justify-content-center mail_crud " value="Submit" onclick="mail_crud()">Submit</button>
+      </div>
+      <br>
+      <br>
+     
+      <div style="width: 70%; padding-left: 65px;">
+        <p class="alert" style="text-align: center;" id="success"  ><b>Mail Sent Successfully</b></p>
+      </div>
+    </div>
+  </body>
+</html>
